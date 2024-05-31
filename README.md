@@ -6,16 +6,17 @@
   - Ethernet: Realtek 2.5Gbps
   - Audio Codec: Realtek ALC897 Codec
   - Wireless (Bluetooth): Intel Wi-Fi 6E
-- **CPU:** Intel Core i7 13700 (iGPU not working)
-- **dGPU:** AMD RX 6800
+- **CPU:** Intel Core i7 14700 (iGPU not working)
+- **dGPU:** AMD RX 6500
 - **Storage:** WD_BLACK SN850X 2000GB
-- **RAM:** Gloway DDR5 6400 16GB*2
+- **RAM:** Gloway DDR5 6400 16GB\*2
 
 ## Software
 
-- **OS:** macOS Ventura 13.6.5
+![alt text](./assets/image.png)
+
+- **OS:** macOS Sonoma 14.3.1
 - **Bootloader:** OpenCore 1.0.0
-- ❌ Not tested on macOS 14 
 
 ## What's working
 
@@ -32,47 +33,49 @@
 MSI B760M MORTAR MAX WIFI D5 ver E7E01IMS.H40 build 07/12/2023
 
 SETTINGS - Advanced:
- - PCIe/PCI Sub-system Settings - Re-size BAR Support: Disabled
- - Integrated Peripherals - External SATA Controller Mode: AHCI Mode
- - Integrated Graphics Configuration
-   - Initiate Graphic Adapter: PEG
-   - IGD Multi-Monitor: Enabled
+
+- PCIe/PCI Sub-system Settings - Re-size BAR Support: Disabled
+- Integrated Peripherals - External SATA Controller Mode: AHCI Mode
+- Integrated Graphics Configuration
+  - Initiate Graphic Adapter: PEG
+  - IGD Multi-Monitor: Enabled
 - USB Configuration - XHCI Hand-off: Enabled
 - BIOS CSM/UEFI Mode: UEFI
 
 SETTINGS - Boot:
+
 - MSI Fast Boot: Disabled
 - Fast Boot: Disabled
 
 SETTINGS - Security - Secure Boot - Secure Boot: Disabled
 
 OC - CPU Features:
+
 - Intel Virtualization Tech (VT-x): Enabled
 - Intel VT-D Tech: Disabled
 - CFG Lock: Disabled
 
-
 ## Kexts
 
-| Name                                                         | Version       |      |
-| ------------------------------------------------------------ | ------------- | ---- |
-| [Lilu](https://github.com/acidanthera/Lilu/releases)         | 1.6.7         |      |
-| [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases)<br />SMCProcessor<br />SMCSuperIO | 1.3.2         |      |
-| [SMCRadeonSensors](https://github.com/NootInc/RadeonSensor/releases) | 2.0.0         |      |
-| [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases) | 1.6.6         |      |
-| [AppleALC](https://github.com/acidanthera/AppleALC/releases) | 1.9.0         |      |
-| [LucyRTL8125Ethernet](https://www.insanelymac.com/forum/files/file/1004-lucyrtl8125ethernet/) | 1.1.0         |      |
-| [USBToolBox](https://github.com/USBToolBox/kext)             | 1.1.1         |      |
-| [BlueToolFixup](https://github.com/acidanthera/BrcmPatchRAM/releases) | 2.6.8         |      |
-| [AirportItlwm](https://github.com/OpenIntelWireless/itlwm/releases) | 2.2.0 Ventura |      |
-| [IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases)<br />IntelBTPatcher | 2.4.0         |      |
-| [NVMeFix](https://github.com/acidanthera/NVMeFix/releases)   | 1.1.1         |      |
-| [CPUTopologyRebuild](https://github.com/b00t0x/CpuTopologyRebuild) | 1.1.0         |      |
-| [RestrictEvents](https://github.com/acidanthera/RestrictEvents) | 1.1.3         |      |
+| Name                                                                                                               | Version       |     |
+| ------------------------------------------------------------------------------------------------------------------ | ------------- | --- |
+| [Lilu](https://github.com/acidanthera/Lilu/releases)                                                               | 1.6.7         |     |
+| [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases)<br />SMCProcessor<br />SMCSuperIO                 | 1.3.2         |     |
+| [SMCRadeonSensors](https://github.com/NootInc/RadeonSensor/releases)                                               | 2.0.0         |     |
+| [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases)                                             | 1.6.6         |     |
+| [AppleALC](https://github.com/acidanthera/AppleALC/releases)                                                       | 1.9.0         |     |
+| [LucyRTL8125Ethernet](https://www.insanelymac.com/forum/files/file/1004-lucyrtl8125ethernet/)                      | 1.1.0         |     |
+| [USBToolBox](https://github.com/USBToolBox/kext)                                                                   | 1.1.1         |     |
+| [BlueToolFixup](https://github.com/acidanthera/BrcmPatchRAM/releases)                                              | 2.6.8         |     |
+| [AirportItlwm](https://github.com/OpenIntelWireless/itlwm/releases)                                                | 2.2.0 Ventura |     |
+| [IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases)<br />IntelBTPatcher | 2.4.0         |     |
+| [NVMeFix](https://github.com/acidanthera/NVMeFix/releases)                                                         | 1.1.1         |     |
+| [CPUTopologyRebuild](https://github.com/b00t0x/CpuTopologyRebuild)                                                 | 1.1.0         |     |
+| [RestrictEvents](https://github.com/acidanthera/RestrictEvents)                                                    | 1.1.3         |     |
 
 ## Config
 
-Most of efi configurations are based on [Dortania's guide for Comet Lake](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#acpi), but there are some differences for 13th CPU (thanks [大头蔡Cass](https://www.youtube.com/watch?v=qcOpeg9E1fQ)).
+Most of efi configurations are based on [Dortania's guide for Comet Lake](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#acpi), but there are some differences for 13th CPU (thanks [大头蔡 Cass](https://www.youtube.com/watch?v=qcOpeg9E1fQ)).
 
 - CPU's SSDT is `SSDT-PLUG-ALT.aml` provided with opencore pkg.
 - Kernel-Emulate: Emulate Comet Lake, details:
